@@ -71,7 +71,6 @@ button:hover {
 #tray,
 #custom-notification,
 #custom-wlogout, 
-#custom-google-tasks, 
 #language,
 #workspaces{
 	padding: 0 10px;
@@ -85,10 +84,10 @@ button:hover {
 	border-radius: 2px;
 }
 #custom-wlogout {
-	margin-left: 4px;
+	margin-left: .5rem;
 	}
-	#custom-nvidia{
-	margin-right: 4px;
+	#tray{
+	margin-right: .5rem;
 	}
 	
 /* * {

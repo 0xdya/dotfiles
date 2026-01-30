@@ -11,20 +11,18 @@
   ],
   "modules-center": [
     // "custom/ip",
-    "clock#clock",
     "clock#date",
-    "custom/google-tasks",
-    // "clock#date",
-    "tray",
+    "clock#time",
   ],
   "modules-right": [
     "hyprland/language" ,
     "wireplumber",
     "temperature",
     "cpu",
-    "custom/prayerTimings",
     "memory",
-    "custom/nvidia",
+    // "custom/nvidia",
+    "tray",
+    // "clock",
     "custom/notification"
   ],
 
@@ -35,11 +33,6 @@
 //   "format": "{}",
 //   "tooltip": false
 // },
-"custom/google-tasks": {
-    "format": "t", 
-    "tooltip": "Google Tasks",
-    "on-click": "gtk-launch tasks"
-},
 "custom/ip": {
     "exec": "~/.config/waybar/scripts/ip.sh",
     "interval": 10,
@@ -79,19 +72,19 @@
   },
   "clock#time": {
   "interval": 60,
-  "format": "  {:%H:%M }",
+"format": "{:%I:%M}",
   "tooltip": false
 },
 
 "clock#date": {
   "interval": 3600,
-  "format": "  {:%d/%m/%Y}",
-  "on-click": "gtk-launch calendar",
+  "format": "{:%a %d %b}",
+    "locale": "ar_EG.UTF-8",
   "tooltip": false
 },
   "clock": {
     "interval": 60,
-    "format": "{:%d/%m/%Y       %I:%M %p}",
+    "format": "{:%a %d %b    %I:%M }",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
@@ -169,7 +162,7 @@
     "format": "{text}",
     "escape": true,
     "return-type": "json",
-    "max-length": 30,
+    // "max-length": 40,
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl stop",
     "smooth-scrolling-threshold": 1,
