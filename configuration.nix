@@ -1,98 +1,149 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, ... }:
 
-{ 
-  imports = [ ./hardware-configuration.nix ]; 
+{
+  imports = [ ./hardware-configuration.nix ];
 
-  # إعدادات الـ Bootloader للـ Dual Boot 
-  boot.loader.systemd-boot.enable = true; 
-  boot.loader.efi.canTouchEfiVariables = true; 
-  boot.kernelParams = [ "nvidia_drm.fbdev=1" ]; 
+  # Boot
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
 
-  networking.hostName = "nixos"; 
-  networking.networkmanager.enable = true; 
-  hardware.bluetooth.enable = true; 
-  services.power-profiles-daemon.enable = true; 
-  services.upower.enable = true; 
+  networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
 
-  time.timeZone = "Africa/Algiers"; 
+  hardware.bluetooth.enable = true;
 
-  nixpkgs.config.allowUnfree = true; 
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
 
-  services.desktopManager.plasma6.enable = false; 
+  time.timeZone = "Africa/Algiers";
 
-  services.displayManager = { 
-    sddm.enable = true; 
-    defaultSession = "niri"; 
-    autoLogin = { 
-      enable = true; 
-      user = "dya"; 
-    }; 
-  }; 
+  nixpkgs.config.allowUnfree = true;
 
-  programs.niri.enable = true; 
-  services.xserver.enable = true; 
+  # X11 مطلوب لـ SDDM وبعض البرامج
+  services.xserver.enable = true;
 
-  # keyboard 
-  services.xserver.xkb = { 
-    layout = "ara, fr"; 
-    variant = ""; 
-    options = "grp:alt_shift_toggle"; 
-  }; 
-  console.keyMap = "fr"; 
+  # SDDM مع اختيار الجلسة
+  services.displayManager = {
+    sddm.enable = true;
 
-  xdg.portal = { 
-    enable = true; 
-    extraPortals = [ pkgs.xdg-desktop-portal-gnome ]; # متوافق تماماً مع Niri 
-  }; 
+    # لا تدخل تلقائياً
+    autoLogin.enable = false;
+  };
 
-  # nvidia 
-  hardware.graphics.enable = true; 
-  services.xserver.videoDrivers = [ "nvidia" ]; 
-  hardware.nvidia = { 
-    modesetting.enable = true; # نيري يدعم الـ modesetting بشكل أفضل مع nvidia 
-    powerManagement.enable = false; 
-    open = false; 
-    nvidiaSettings = true; 
-    package = config.boot.kernelPackages.nvidiaPackages.stable; 
-  }; 
+  # Niri
+  programs.niri.enable = true;
 
-  # user 
-  users.users.dya = { 
-    isNormalUser = true; 
-    description = "dya"; 
-    extraGroups = [ "networkmanager" "wheel" "video" ]; 
-  }; 
+  # Hyprland
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
-  environment.systemPackages = with pkgs; [ 
-    alacritty 
-    mako 
-    rofi 
-    firefox 
-    git 
-    neovim 
-    vim 
-    fuzzel 
-    fish 
-    starship 
-    nautilus 
-#   code-cursor
-    xwayland 
-    xwayland-satellite 
-    noctalia-shell 
-    brightnessctl 
-    vscode 
-    playerctl 
-    kdePackages.dolphin 
-    discord 
-  ]; 
+  # لوحة المفاتيح
+  services.xserver.xkb = {
+    layout = "ara,fr";
+    variant = "";
+    options = "grp:alt_shift_toggle";
+  };
 
-  qt.enable = true; 
+  console.keyMap = "fr";
 
-  system.stateVersion = "24.05"; 
+  # Portal
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gnome
+    ];
+  };
 
-  fonts.packages = with pkgs; [ 
-    noto-fonts 
-    noto-fonts-color-emoji 
-    material-symbols 
-  ]; 
+  # NVIDIA
+  hardware.graphics.enable = true;
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    open = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
+  # المستخدم
+  users.users.dya = {
+    isNormalUser = true;
+    description = "dya";
+    shell = pkgs.fish;
+
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "video"
+      "i2c"
+    ];
+  };
+
+  hardware.i2c.enable = true;
+  services.udev.packages = [ pkgs.ddcutil ];
+
+  # البرامج
+  environment.systemPackages = with pkgs; [
+#   alacritty
+    kitty
+    firefox
+    git
+    neovim
+    vim
+    fish
+    starship
+    fuzzel
+    rofi
+    mako
+
+    nautilus
+    kdePackages.dolphin
+
+    xwayland
+    xwayland-satellite
+
+    noctalia-shell
+
+    ddcutil
+    brightnessctl
+    playerctl
+
+    cursor
+    vscode
+    discord
+
+    # Hyprland extras
+    waybar
+    hyprpaper
+    hyprlock
+    hypridle
+  ];
+
+  qt.enable = true;
+
+# program
+# programs.kitty = {
+#  enable = true;
+# };
+
+programs.fish = {
+  enable = true;
+  
+  shellAliases = {
+    b = "ddcutil setvcp 10";
+  };
+};
+
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-color-emoji
+    material-symbols
+  ];
+
+  system.stateVersion = "24.05";
 }
