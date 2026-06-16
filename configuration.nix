@@ -27,8 +27,14 @@
   services.displayManager = {
     sddm.enable = true;
 
-    # لا تدخل تلقائياً
-    autoLogin.enable = false;
+    autoLogin.enable = true;
+
+    autoLogin = {
+      enable = true;
+      user = "dya";
+    };
+    
+    defaultSession = "niri";
   };
 
   # Niri
