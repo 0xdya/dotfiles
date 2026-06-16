@@ -14,7 +14,7 @@
   hardware.bluetooth.enable = true;
 
   services.power-profiles-daemon.enable = true;
-  services.upower.enable = true;
+  services.upower.enable = false;
 
   time.timeZone = "Africa/Algiers";
 
@@ -35,10 +35,10 @@
   programs.niri.enable = true;
 
   # Hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+#  programs.hyprland = {
+#    enable = true;
+#    xwayland.enable = true;
+#  };
 
   # لوحة المفاتيح
   services.xserver.xkb = {
@@ -53,8 +53,10 @@
   xdg.portal = {
     enable = true;
     extraPortals = [
-      pkgs.xdg-desktop-portal-gnome
+     #pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal-gtk
     ];
+  configPackages = [ pkgs.niri ];
   };
 
   # NVIDIA
@@ -87,6 +89,11 @@
   hardware.i2c.enable = true;
   services.udev.packages = [ pkgs.ddcutil ];
 
+  environment.sessionVariables = {
+  NIXOS_OZONE_WL = "1";
+  WLR_NO_HARDWARE_CURSORS = "1"; 
+  };
+
   # البرامج
   environment.systemPackages = with pkgs; [
 #   alacritty
@@ -98,14 +105,14 @@
     fish
     starship
     fuzzel
-    rofi
+    #rofi
     mako
 
     nautilus
-    kdePackages.dolphin
+    #kdePackages.dolphin
 
-    xwayland
-    xwayland-satellite
+    #xwayland
+    #xwayland-satellite
 
     noctalia-shell
 
@@ -113,15 +120,15 @@
     brightnessctl
     playerctl
 
-    cursor
+    #code-cursor
     vscode
     discord
 
     # Hyprland extras
-    waybar
-    hyprpaper
-    hyprlock
-    hypridle
+    #waybar
+    #hyprpaper
+    #hyprlock
+    #hypridle
   ];
 
   qt.enable = true;
