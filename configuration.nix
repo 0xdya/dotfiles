@@ -220,6 +220,14 @@
     thunar-volman
   ];
 
+programs.obs-studio = {
+  enable = true;
+
+  plugins = with pkgs.obs-studio-plugins; [
+    wlrobs
+    obs-pipewire-audio-capture
+  ];
+}; 
   services.xserver.xkb = {
     layout = "ara,fr";
     variant = "";
@@ -232,7 +240,7 @@
   # Virtualization
   # -----------------------
   virtualisation.libvirtd.enable = true;
-
+  networking.nftables.enable = true;
   virtualisation.libvirtd.qemu.vhostUserPackages = [
     pkgs.virtiofsd
   ];
