@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
@@ -11,10 +11,21 @@
   # -----------------------
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  boot.initrd.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
   boot.kernelParams = [
+    "nvidia_drm.modeset=1"
     "nvidia_drm.fbdev=1"
+    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
   ];
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;            # ← أضف هذا
+    extraPackages = with pkgs; [
+      nvidia-vaapi-driver
+      libvdpau-va-gl
+    ];
+  };
 
   boot.loader.systemd-boot.windows = {
     "11" = {
@@ -29,6 +40,7 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
+  networking.firewall.allowedTCPPorts = [ 11434 ];
 
   time.timeZone = "Africa/Algiers";
 
@@ -85,6 +97,8 @@
       "video"
       "i2c"
       "libvirtd"
+      "ydotool"
+      "docker"
     ];
   };
 
@@ -128,8 +142,6 @@
   # -----------------------
   # NVIDIA (FIXED - no duplicates)
   # -----------------------
-  hardware.graphics.enable = true;
-
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
@@ -138,7 +150,7 @@
     powerManagement.enable = false;
     powerManagement.finegrained = false;
 
-    open = false;
+    open = true;
 
     nvidiaSettings = true;
 
@@ -157,7 +169,18 @@
 
     GBM_BACKEND = "nvidia-drm";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    LIBVA_DRIVER_NAME = "nvidia";
+    NVD_BACKEND = "direct";
+    WLR_NO_HARDWARE_CURSORS = "1";
   };
+
+  environment.variables = {
+  # لإجبار فايرفوكس على استخدام Wayland
+  MOZ_ENABLE_WAYLAND = "1";
+
+  # لإجبار متصفحات الكروميوم (Chrome, Chromium, Brave) على استخدام Wayland
+  NIXOS_OZONE_WL = "1";
+ };
 
   services.udev.packages = [ pkgs.ddcutil ];
 
@@ -170,6 +193,8 @@
     material-symbols
   ];
 
+#  fonts.fontconfig.enable = false;
+
   system.stateVersion = "24.05";
 
   # -----------------------
@@ -180,19 +205,21 @@
   programs.xwayland.enable = true;
   programs.niri.enable = true;
 
-  services.displayManager = {
-    defaultSession = "niri";
+services.displayManager = {
+  defaultSession = "niri";
 
-    autoLogin = {
-      enable = true;
-      user = "dya";
-    };
-
-    sddm = {
-      enable = true;
-      wayland.enable = true;
-    };
+  autoLogin = {
+    enable = false;
+    user = "dya";
   };
+
+  sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
+};
+
+services.desktopManager.plasma6.enable = true;
 
   xdg.portal = {
     enable = true;
@@ -228,11 +255,22 @@ programs.obs-studio = {
     obs-pipewire-audio-capture
   ];
 }; 
+
   services.xserver.xkb = {
     layout = "ara,fr";
     variant = "";
     options = "grp:alt_shift_toggle";
   };
+
+services.ollama = {
+  enable = true;
+  package = pkgs.ollama-cuda;
+};
+
+services.open-webui = {
+  enable = true;
+   port = 3000;
+};
 
   console.keyMap = "fr";
 
@@ -244,4 +282,10 @@ programs.obs-studio = {
   virtualisation.libvirtd.qemu.vhostUserPackages = [
     pkgs.virtiofsd
   ];
+
+  programs.ydotool.enable = true;
+
+
+  # تفعيل خدمة Docker
+  virtualisation.docker.enable = true;
 }
