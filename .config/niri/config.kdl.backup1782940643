@@ -96,7 +96,6 @@ input {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
-    
     // Set gaps around windows in logical pixels.
     background-color "transparent"
     // When to center a column when changing focus, options are:
@@ -148,7 +147,6 @@ layout {
     }
     struts {
     }
-    
 }
 layer-rule {
     match namespace="^quickshell$"
@@ -163,7 +161,6 @@ overview {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
-spawn-at-startup "mpvpaper" "*" "Pictures/Wallpapers/v1.mp4" "--mpv-options=loop=inf"
 // This line starts waybar, a commonly used bar for Wayland compositors.
 environment {
   XDG_CURRENT_DESKTOP "niri"
@@ -224,7 +221,7 @@ animations {
     clip-to-geometry true
 
     draw-border-with-background false
-    opacity 0.94
+    opacity 0.96
     background-effect {
         blur true
         xray true
@@ -258,7 +255,7 @@ window-rule {
     match app-id=r#"^gnome-calculator$"#
     match app-id=r#"^galculator$"#
     match app-id=r#"^blueman-manager$"#
-    // match app-id=r#"^org\.gnome\.Nautilus$"#
+    match app-id=r#"^org\.gnome\.Nautilus$"#
     match app-id=r#"^xdg-desktop-portal$"#
     open-floating true
 }
@@ -286,12 +283,6 @@ window-rule {
     match app-id=r#"com.danklinux.dms$"#
     open-floating true
 }
-window-rule {
-    match app-id="code-oss"
-    open-maximized true
-    // أو يمكنك تحديد العرض الكامل مباشرة:
-    // default-column-width { proportion 1.0; }
-}
 debug {
     honor-xdg-activation-with-invalid-serial
 }
@@ -313,5 +304,3 @@ include "dms/alttab.kdl"
 include "dms/binds.kdl"
 include "dms/outputs.kdl"
 include "dms/cursor.kdl"
-
-include "dms/windowrules.kdl"
