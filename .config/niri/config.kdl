@@ -229,7 +229,7 @@ animations {
         blur true
         xray true
         noise 0.2
-        saturation 2
+        saturation 8
     }
 }
 

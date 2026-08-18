@@ -1,22 +1,24 @@
 binds {
     Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
+    Ctrl+Shift+R hotkey-overlay-title="Rename Workspace" { spawn "dms" "ipc" "call" "workspace-rename" "open"; }
     Ctrl+XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "decrement" "3"; }
     Ctrl+XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "increment" "3"; }
     Mod+Alt+L hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
     Mod+Comma hotkey-overlay-title="Settings" { spawn "dms" "ipc" "call" "settings" "focusOrToggle"; }
     Mod+M hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
     Mod+N hotkey-overlay-title="Notification Center" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
+    Mod+Shift+N hotkey-overlay-title="Notepad" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
     Mod+Shift+W hotkey-overlay-title="Create window rule" { spawn "dms" "ipc" "call" "window-rules" "toggle"; }
     Mod+Space hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Mod+V hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
     Mod+Y hotkey-overlay-title="Browse Wallpapers" { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
-    Super+Alt+N hotkey-overlay-title="Notepad" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
-    Super+Return hotkey-overlay-title="Media: Play/Pause" { spawn "dms" "ipc" "call" "mpris" "playPause"; }
     Super+X hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "decrement" "3"; }
     XF86AudioMicMute allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "micmute"; }
     XF86AudioMute allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "mute"; }
     XF86AudioNext allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "next"; }
+    XF86AudioPause allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
+    XF86AudioPlay allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
     XF86AudioPrev allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "previous"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "increment" "3"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
@@ -36,6 +38,8 @@ binds {
     Mod+Ctrl+Up { move-column-to-workspace-up; }
     Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
     Mod+Ctrl+WheelScrollUp cooldown-ms=150 { move-column-to-workspace-up; }
+    Mod+I { focus-workspace-up; }
+    Mod+Page_Down { focus-workspace-down; }
     Mod+Page_Up { focus-workspace-up; }
     Mod+Shift+1 { move-column-to-workspace 1; }
     Mod+Shift+2 { move-column-to-workspace 2; }
@@ -50,10 +54,9 @@ binds {
     Mod+Shift+Page_Down { move-workspace-down; }
     Mod+Shift+Page_Up { move-workspace-up; }
     Mod+Shift+U { move-workspace-down; }
+    Mod+U { focus-workspace-down; }
     Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
-    Super+S { focus-workspace-down; }
-    Super+Z { focus-workspace-up; }
     Alt+Print { screenshot-window; }
     Alt+XF86Launch1 { screenshot-window; }
     Mod+Alt+WheelScrollDown { focus-column-right; }
@@ -75,14 +78,20 @@ binds {
     Mod+Ctrl+Shift+WheelScrollUp { move-column-left; }
     Mod+Ctrl+WheelScrollLeft { move-column-left; }
     Mod+Ctrl+WheelScrollRight { move-column-right; }
+    Mod+Down { focus-window-down; }
+    Mod+E { spawn "nautilus" "--new-window"; }
     Mod+End { focus-column-last; }
     Mod+Equal { set-column-width "+10%"; }
     Mod+F { maximize-column; }
+    Mod+H { focus-column-left; }
     Mod+Home { focus-column-first; }
+    Mod+J { focus-window-down; }
     Mod+K { focus-window-up; }
+    Mod+L { focus-column-right; }
     Mod+Left { focus-column-left; }
     Mod+Minus { set-column-width "-10%"; }
     Mod+Period { expel-window-from-column; }
+    Mod+Q repeat=false { close-window; }
     Mod+R { switch-preset-column-width; }
     Mod+Right { focus-column-right; }
     Mod+Shift+Ctrl+Down { move-column-to-monitor-down; }
@@ -107,23 +116,21 @@ binds {
     Mod+Shift+T { toggle-window-floating; }
     Mod+Shift+Up { move-window-up; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+Up { focus-window-up; }
     Mod+W { toggle-column-tabbed-display; }
-    Shift+Super+WheelScrollUp hotkey-overlay-title="Focus Right" { focus-column-right; }
-    Super+D hotkey-overlay-title="Focus Right" { focus-column-right; }
-    Super+E { spawn "nautilus" "--new-window"; }
-    Super+J hotkey-overlay-title="Focus Left" { focus-column-left; }
-    Super+Q repeat=false { close-window; }
+    Mod+WheelScrollLeft { focus-column-left; }
+    Mod+WheelScrollRight { focus-column-right; }
     Mod+Shift+P { power-off-monitors; }
     Ctrl+Print { screenshot-screen; }
     Ctrl+XF86Launch1 { screenshot-screen; }
     Print { screenshot; }
     XF86Launch1 { screenshot; }
     Mod+Shift+E { quit; }
+    Mod+B { spawn "firefox"; }
+    Mod+C { spawn "code"; }
     Mod+T hotkey-overlay-title="Open Terminal" { spawn "kitty"; }
-    Super+B { spawn "firefox"; }
-    Super+C { spawn "code"; }
+    Mod+D repeat=false { toggle-overview; }
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Tab repeat=false { toggle-overview; }
-    Super+G repeat=false { toggle-overview; }
 }
