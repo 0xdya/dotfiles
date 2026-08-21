@@ -1,8 +1,8 @@
 binds {
     Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
-    Ctrl+Shift+R hotkey-overlay-title="Rename Workspace" { spawn "dms" "ipc" "call" "workspace-rename" "open"; }
     Ctrl+XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "decrement" "3"; }
     Ctrl+XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "increment" "3"; }
+    Mod+Alt+B { spawn "dms" "ipc" "call" "wallpaperCarousel" "toggle"; }
     Mod+Alt+L hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
     Mod+Comma hotkey-overlay-title="Settings" { spawn "dms" "ipc" "call" "settings" "focusOrToggle"; }
     Mod+M hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
@@ -128,7 +128,7 @@ binds {
     Mod+Shift+E { quit; }
     Mod+B { spawn "firefox"; }
     Mod+C { spawn "code"; }
-    Mod+T hotkey-overlay-title="Open Terminal" { spawn "kitty"; }
+    Mod+T hotkey-overlay-title="Open Terminal" { spawn "alacritty"; }
     Mod+D repeat=false { toggle-overview; }
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+Slash { show-hotkey-overlay; }

@@ -2,32 +2,13 @@
 // "/-" comments out the following node.
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
-
-  window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
-
-    draw-border-with-background false
-    opacity 0.94
-    background-effect {
-        blur true
-        xray true
-        noise 0.2
-        saturation 8
-    }
-}
-
-xwayland-satellite {
-    path "/usr/bin/xwayland-satellite"
-}
-
 config-notification {
     disable-failed
 }
 
 gestures {
     hot-corners {
-        // off
+        off
     }
 }
 
@@ -41,9 +22,8 @@ input {
             // For more information, see xkeyboard-config(7).
 
             // For example:
-            layout "fr,ara"
+            layout "ara,fr"
             options "grp:alt_shift_toggle"
-            // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
 
             // If this section is empty, niri will fetch xkb settings
             // from org.freedesktop.locale1. You can control these using
@@ -74,8 +54,8 @@ input {
     mouse {
         // off
         // natural-scroll
-         accel-speed 0.0
-         accel-profile "flat"
+        // accel-speed 0.2
+        // accel-profile "flat"
         // scroll-method "no-scroll"
     }
 
@@ -95,7 +75,7 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    focus-follows-mouse max-scroll-amount="0%"
+    // focus-follows-mouse max-scroll-amount="0%"
 }
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
@@ -112,7 +92,6 @@ input {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
-    
     // Set gaps around windows in logical pixels.
     background-color "transparent"
     // When to center a column when changing focus, options are:
@@ -164,7 +143,6 @@ layout {
     }
     struts {
     }
-    
 }
 layer-rule {
     match namespace="^quickshell$"
@@ -179,9 +157,6 @@ overview {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
-spawn-at-startup "waydroid" "session" "start"
-spawn-at-startup "waydroid" "session" "start"
-// spawn-at-startup "mpvpaper" "*" "Pictures/Wallpapers/v1.mp4" "--mpv-options=loop=inf"
 // This line starts waybar, a commonly used bar for Wayland compositors.
 environment {
   XDG_CURRENT_DESKTOP "niri"
@@ -193,43 +168,34 @@ prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
     workspace-switch {
-        spring damping-ratio=0.95 stiffness=950 epsilon=0.0001
+        spring damping-ratio=0.80 stiffness=523 epsilon=0.0001
     }
-
     window-open {
-        duration-ms 140
-        curve "ease-out-quad"
+        duration-ms 150
+        curve "ease-out-expo"
     }
-
     window-close {
-        duration-ms 120
+        duration-ms 150
         curve "ease-out-quad"
     }
-
     horizontal-view-movement {
-        spring damping-ratio=0.95 stiffness=900 epsilon=0.0001
+        spring damping-ratio=0.85 stiffness=423 epsilon=0.0001
     }
-
     window-movement {
-        spring damping-ratio=0.92 stiffness=850 epsilon=0.0001
+        spring damping-ratio=0.75 stiffness=323 epsilon=0.0001
     }
-
     window-resize {
-        spring damping-ratio=0.92 stiffness=900 epsilon=0.0001
+        spring damping-ratio=0.85 stiffness=423 epsilon=0.0001
     }
-
     config-notification-open-close {
-        duration-ms 80
-        curve "ease-out-quad"
+        spring damping-ratio=0.65 stiffness=923 epsilon=0.001
     }
-
     screenshot-ui-open {
-        duration-ms 90
+        duration-ms 200
         curve "ease-out-quad"
     }
-
     overview-open-close {
-        spring damping-ratio=0.95 stiffness=1000 epsilon=0.0001
+        spring damping-ratio=0.85 stiffness=800 epsilon=0.0001
     }
 }
 // Window rules let you adjust behavior for individual windows.
@@ -237,15 +203,6 @@ animations {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
-
-window-rule {
-    match app-id=r"^waydroid\."
-
-    open-floating true
-    default-column-width { fixed 420; }
-    default-window-height { fixed 750; }
-}
-
 window-rule {
     // This regular expression is intentionally made as specific as possible,
     // since this is the default config, and we want no false positives.
@@ -271,7 +228,7 @@ window-rule {
     match app-id=r#"^gnome-calculator$"#
     match app-id=r#"^galculator$"#
     match app-id=r#"^blueman-manager$"#
-    // match app-id=r#"^org\.gnome\.Nautilus$"#
+    match app-id=r#"^org\.gnome\.Nautilus$"#
     match app-id=r#"^xdg-desktop-portal$"#
     open-floating true
 }
@@ -299,12 +256,6 @@ window-rule {
     match app-id=r#"com.danklinux.dms$"#
     open-floating true
 }
-window-rule {
-    match app-id="code-oss"
-    open-maximized true
-    // أو يمكنك تحديد العرض الكامل مباشرة:
-    // default-column-width { proportion 1.0; }
-}
 debug {
     honor-xdg-activation-with-invalid-serial
 }
@@ -326,5 +277,3 @@ include "dms/alttab.kdl"
 include "dms/binds.kdl"
 include "dms/outputs.kdl"
 include "dms/cursor.kdl"
-
-include "dms/windowrules.kdl"

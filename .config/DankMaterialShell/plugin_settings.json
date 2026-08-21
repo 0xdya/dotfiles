@@ -3,5 +3,12 @@
     "enabled": true,
     "pasteOnSelect": true,
     "recentEmojis": "󰞅"
+  },
+  "wallpaperCarousel": {
+    "enabled": true,
+    "borderWidth": 3,
+    "itemWidth": 300,
+    "overlayOpacity": 80,
+    "wallpaperDirectory": "/home/dya/wallpapers"
   }
 }
