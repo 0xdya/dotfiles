@@ -1,0 +1,29 @@
+{
+    "window.titleBarStyle": "native",
+    "workbench.browser.showInTitleBar": false,
+    "chat.titleBar.openInAgentsWindow.enabled": false,
+    "workbench.layoutControl.enabled": false,
+    "workbench.navigationControl.enabled": false,
+    "window.menuBarVisibility": "toggle",
+    "workbench.activityBar.location": "top",
+    "chat.viewSessions.enabled": false,
+    "editor.minimap.enabled": false,
+    "editor.stickyScroll.enabled": false,
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.hover.enabled": "off",
+    "editor.suggest.showHover": false,
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "off",
+        "strings": "off"
+    },
+    "editor.wordBasedSuggestions": "matchingDocuments",
+    "emmet.showAbbreviationSuggestions": true,
+    "editor.inlineSuggest.enabled": false,
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "github.copilot.nextEditSuggestions.extendedRange": false,
+    "github.copilot.editor.enableAutoCompletions": false,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmPasteNative": false
+}
