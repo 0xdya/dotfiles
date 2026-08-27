@@ -1,0 +1,19 @@
+// DMS Window Rules - Managed by DankMaterialShell
+// Do not edit manually - changes may be overwritten
+
+// @id=wr_1787156039620469340 @name=waydroid.org.hicham.salaat
+window-rule {
+    match app-id="^waydroid.org.hicham.salaat$"
+    default-column-width { fixed 80; }
+    default-window-height { fixed 60; }
+    max-width 80
+    max-height 60
+    default-floating-position x=10 y=10 relative-to="top-right"
+}
+
+// @id=wr_1787162403458446642 @name=org.telegram.desktop
+window-rule {
+    match app-id="^org.telegram.desktop$"
+    default-column-width { fixed 780; }
+    default-floating-position x=80 y=50 relative-to="top-right"
+}
