@@ -25,5 +25,6 @@
     "github.copilot.editor.enableAutoCompletions": false,
     "diffEditor.ignoreTrimWhitespace": true,
     "explorer.confirmDragAndDrop": false,
-    "explorer.confirmPasteNative": false
+    "explorer.confirmPasteNative": false,
+    "git.autofetch": true
 }

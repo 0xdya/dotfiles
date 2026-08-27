@@ -156,6 +156,11 @@
       "id": "darkMode",
       "enabled": true,
       "width": 50
+    },
+    {
+      "id": "doNotDisturb",
+      "enabled": true,
+      "width": 50
     }
   ],
   "showWorkspaceIndex": true,
@@ -280,15 +285,45 @@
   "appLauncherViewMode": "list",
   "spotlightModalViewMode": "list",
   "browserPickerViewMode": "grid",
-  "browserUsageHistory": {},
+  "browserUsageHistory": {
+    "firefox": {
+      "count": 19,
+      "lastUsed": 1787811303724,
+      "name": "Firefox"
+    }
+  },
   "appPickerViewMode": "grid",
-  "filePickerUsageHistory": {},
+  "filePickerUsageHistory": {
+    "vim": {
+      "count": 4,
+      "lastUsed": 1787590917730,
+      "name": "Vim"
+    },
+    "firefox": {
+      "count": 2,
+      "lastUsed": 1787340011796,
+      "name": "Firefox"
+    },
+    "libreoffice-writer": {
+      "count": 4,
+      "lastUsed": 1787803070831,
+      "name": "LibreOffice Writer"
+    },
+    "code-oss": {
+      "count": 1,
+      "lastUsed": 1787777218160,
+      "name": "Code - OSS"
+    }
+  },
   "sortAppsAlphabetically": false,
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
   "rememberLastQuery": false,
   "rememberLastMode": true,
-  "spotlightSectionViewModes": {},
+  "spotlightSectionViewModes": {
+    "apps": "tile",
+    "plugin_calculator": "list"
+  },
   "appDrawerSectionViewModes": {},
   "niriOverviewOverlayEnabled": true,
   "niriOverviewLauncherStyle": "full",
@@ -459,7 +494,7 @@
   "dockAutoHide": true,
   "dockSmartAutoHide": false,
   "dockUseOverlayLayer": false,
-  "dockGroupByApp": false,
+  "dockGroupByApp": true,
   "dockRestoreSpecialWorkspaceOnClick": false,
   "dockOpenOnOverview": false,
   "dockPosition": 1,
@@ -481,14 +516,14 @@
   "dockLauncherLogoBrightness": 0.5,
   "dockLauncherLogoContrast": 1,
   "dockMaxVisibleApps": 0,
-  "dockMaxVisibleRunningApps": 11,
+  "dockMaxVisibleRunningApps": 1,
   "dockShowOverflowBadge": true,
   "dockShowTrash": false,
-  "dockTrashFileManager": "default",
+  "dockTrashFileManager": "nautilus",
   "dockTrashCustomCommand": "",
   "notificationOverlayEnabled": false,
   "notificationPopupShadowEnabled": true,
-  "notificationPopupPrivacyMode": false,
+  "notificationPopupPrivacyMode": true,
   "notificationForegroundLayers": true,
   "modalDarkenBackground": true,
   "lockScreenShowPowerActions": true,
@@ -518,9 +553,9 @@
   "lockScreenWallpaperFillMode": "",
   "lockScreenFontFamily": "",
   "hideBrightnessSlider": false,
-  "notificationTimeoutLow": 5000,
+  "notificationTimeoutLow": 3000,
   "notificationTimeoutNormal": 5000,
-  "notificationTimeoutCritical": 0,
+  "notificationTimeoutCritical": 15000,
   "notificationCompactMode": false,
   "notificationShowTimeoutBar": true,
   "notificationDedupeEnabled": true,
@@ -529,7 +564,7 @@
   "notificationCustomAnimationDuration": 400,
   "notificationHistoryEnabled": true,
   "notificationHistoryMaxCount": 50,
-  "notificationHistoryMaxAgeDays": 7,
+  "notificationHistoryMaxAgeDays": 1,
   "notificationHistorySaveLow": true,
   "notificationHistorySaveNormal": true,
   "notificationHistorySaveCritical": true,
@@ -546,18 +581,18 @@
   "osdCapsLockEnabled": true,
   "osdPowerProfileEnabled": true,
   "osdAudioOutputEnabled": true,
-  "powerActionConfirm": true,
+  "powerActionConfirm": false,
   "powerActionHoldDuration": 0.5,
   "powerMenuActions": [
     "reboot",
     "logout",
     "poweroff",
     "lock",
-    "suspend",
-    "restart"
+    "restart",
+    "suspend"
   ],
-  "powerMenuDefaultAction": "logout",
-  "powerMenuGridLayout": false,
+  "powerMenuDefaultAction": "reboot",
+  "powerMenuGridLayout": true,
   "customPowerActionLock": "",
   "customPowerActionLogout": "",
   "customPowerActionSuspend": "",

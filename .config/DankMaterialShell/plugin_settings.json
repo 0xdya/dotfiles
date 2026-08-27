@@ -2,7 +2,7 @@
   "emojiLauncher": {
     "enabled": true,
     "pasteOnSelect": true,
-    "recentEmojis": "󰞅"
+    "recentEmojis": "∫,,󰞅"
   },
   "wallpaperCarousel": {
     "enabled": true,
@@ -10,5 +10,9 @@
     "itemWidth": 300,
     "overlayOpacity": 80,
     "wallpaperDirectory": "/home/dya/wallpapers"
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
   }
 }
