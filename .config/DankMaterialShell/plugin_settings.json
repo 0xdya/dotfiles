@@ -2,10 +2,10 @@
   "emojiLauncher": {
     "enabled": true,
     "pasteOnSelect": true,
-    "recentEmojis": "∫,,󰞅"
+    "recentEmojis": "󰞅,∫,"
   },
   "wallpaperCarousel": {
-    "enabled": true,
+    "enabled": false,
     "borderWidth": 3,
     "itemWidth": 300,
     "overlayOpacity": 80,
@@ -14,5 +14,47 @@
   "calculator": {
     "enabled": true,
     "trigger": "="
+  },
+  "mpvpaperWallpaper": {
+    "enabled": false,
+    "monitorPaths": {
+      "DP-1": "/home/dya/wallpapers/10.mp4"
+    },
+    "allMonitors": true,
+    "allMonitorsPath": "/home/dya/wallpapers/5.mp4",
+    "generateStaticWallpaper": true,
+    "screenshotDelay": 2,
+    "panscanValue": 0.99
+  },
+  "mpvpaper": {
+    "enabled": false,
+    "monitorPlaylists": {
+      "DP-1": [
+        "/home/dya/wallpapers/14542791221494008358.mp4",
+        "/home/dya/wallpapers/1.mp4",
+        "/home/dya/wallpapers/2.mp4",
+        "/home/dya/wallpapers/3.mp4",
+        "/home/dya/wallpapers/4.mp4",
+        "/home/dya/wallpapers/5.mp4",
+        "/home/dya/wallpapers/hachimi - The road that lead to a place where the time feel still #1 [2055067370843168768].mp4",
+        "/home/dya/wallpapers/hachimi - The road that lead to a place where the time feel still #2 [2054610604653223936].mp4",
+        "/home/dya/wallpapers/6.mp4",
+        "/home/dya/wallpapers/7.mp4",
+        "/home/dya/wallpapers/11.mp4",
+        "/home/dya/wallpapers/10.mp4",
+        "/home/dya/wallpapers/8.mp4"
+      ]
+    },
+    "playlistIndices": {
+      "DP-1": 12
+    },
+    "monitorVideos": {
+      "DP-1": "/home/dya/wallpapers/8.mp4"
+    },
+    "videoSettings": {
+      "/home/dya/wallpapers/7.mp4": {
+        "panscan": 0.5
+      }
+    }
   }
 }
