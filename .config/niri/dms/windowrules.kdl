@@ -11,9 +11,30 @@ window-rule {
     default-floating-position x=10 y=10 relative-to="top-right"
 }
 
-// @id=wr_1787162403458446642 @name=org.telegram.desktop
+// @id=wr_1787781864869501162 @name=xdg-desktop-portal-gtk
 window-rule {
-    match app-id="^org.telegram.desktop$"
-    default-column-width { fixed 780; }
-    default-floating-position x=80 y=50 relative-to="top-right"
+    match app-id="^xdg-desktop-portal-gtk$" is-floating=true
+    default-column-width { fixed 800; }
+    default-window-height { fixed 400; }
+}
+
+// @id=wr_1787781888171414687 @name=xdg-desktop-portal-gtk
+window-rule {
+    match app-id="^xdg-desktop-portal-gtk$" is-floating=true
+    default-column-width { fixed 800; }
+    default-window-height { fixed 400; }
+}
+
+// @id=dms-floating-windows @name=DMS Floating Windows
+window-rule {
+    match app-id="^com.danklinux.dms$"
+    open-floating true
+}
+
+// @id=wr_1789947631459194903 @name=org.kde.kcalc
+window-rule {
+    match app-id="^org.kde.kcalc$" is-floating=true
+    open-floating true
+    default-column-width { fixed 800; }
+    default-window-height { fixed 600; }
 }
