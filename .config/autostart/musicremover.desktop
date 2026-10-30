@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Music Remover
+Exec="/home/dya/squashfs-root/MusicRemover" --hidden
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true

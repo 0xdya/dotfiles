@@ -1,0 +1,40 @@
+// DMS Window Rules - Managed by DankMaterialShell
+// Do not edit manually - changes may be overwritten
+
+// @id=wr_1787156039620469340 @name=waydroid.org.hicham.salaat
+window-rule {
+    match app-id="^waydroid.org.hicham.salaat$"
+    default-column-width { fixed 80; }
+    default-window-height { fixed 60; }
+    max-width 80
+    max-height 60
+    default-floating-position x=10 y=10 relative-to="top-right"
+}
+
+// @id=wr_1787781864869501162 @name=xdg-desktop-portal-gtk
+window-rule {
+    match app-id="^xdg-desktop-portal-gtk$" is-floating=true
+    default-column-width { fixed 800; }
+    default-window-height { fixed 400; }
+}
+
+// @id=wr_1787781888171414687 @name=xdg-desktop-portal-gtk
+window-rule {
+    match app-id="^xdg-desktop-portal-gtk$" is-floating=true
+    default-column-width { fixed 800; }
+    default-window-height { fixed 400; }
+}
+
+// @id=dms-floating-windows @name=DMS Floating Windows
+window-rule {
+    match app-id="^com.danklinux.dms$"
+    open-floating true
+}
+
+// @id=wr_1789947631459194903 @name=org.kde.kcalc
+window-rule {
+    match app-id="^org.kde.kcalc$" is-floating=true
+    open-floating true
+    default-column-width { fixed 800; }
+    default-window-height { fixed 600; }
+}

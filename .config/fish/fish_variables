@@ -1,0 +1,4 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export SAL_USE_VCLPLUGIN:gtk3
+SETUVAR __fish_initialized:4300
