@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Google Classroom Dark Mode</title>
+        <link rel="stylesheet" href="popup.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="popup-container">
+            <!-- Header -->
+            <div class="header">
+                <div class="title">
+                    <div class="icon-title">🌙</div>
+                    <h1>Classroom Dark Mode</h1>
+                </div>
+                <div class="version" id="version">v6.4.1</div>
+            </div>
+
+            <!-- Version Notice
+            <div class="notice-section">
+                <div class="notice-banner">
+                    <div class="notice-icon">⚠️</div>
+                    <div class="notice-text">
+                        <strong>Version 6 Notice:</strong> This version is incomplete. Expect more updates in the coming days!
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Main Toggle -->
+            <div class="setting-section">
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="setting-label">Enable Dark Mode</div>
+                        <div class="setting-description">Turn dark mode on or off</div>
+                    </div>
+                    <label class="modern-switch">
+                        <input type="checkbox" id="master-toggle" aria-label="Enable Dark Mode">
+                        <span class="switch-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Theme Selection -->
+            <div class="setting-section" id="theme-section">
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="setting-label">Theme Style</div>
+                        <div class="setting-description">Choose your preferred dark theme</div>
+                    </div>
+                    <div class="dropdown-container">
+                        <select id="theme-selector" class="theme-dropdown" aria-label="Select dark theme style">
+                            <option value="googleblack">Google Black</option>
+                            <option value="jetblack">Jet Black</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Theme Option -->
+            <div class="setting-section" id="system-theme-section">
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="setting-label">Follow System Theme</div>
+                        <div class="setting-description">Automatically match your system's theme</div>
+                    </div>
+                    <label class="modern-switch">
+                        <input type="checkbox" id="system-theme-toggle" aria-label="Follow System Theme">
+                        <span class="switch-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Class Colors Option -->
+            <div class="setting-section" id="class-colors-section">
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="setting-label">Keep Class Colors</div>
+                        <div class="setting-description">Preserve original class colors when dark mode is enabled</div>
+                    </div>
+                    <label class="modern-switch">
+                        <input type="checkbox" id="class-colors-toggle" aria-label="Keep Class Colors">
+                        <span class="switch-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <div class="status" id="status">Ready</div>
+                <div class="attribution">Made with ❤️ by Zekerocks11 in the US</div>
+            </div>
+        </div>
+        <script src="popup.js" charset="utf-8"></script>
+    </body>
+</html>

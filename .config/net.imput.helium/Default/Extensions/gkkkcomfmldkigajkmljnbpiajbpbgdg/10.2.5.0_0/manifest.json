@@ -1,0 +1,94 @@
+{
+   "action": {
+      "browser_style": false,
+      "default_icon": "/icons/icon-32.png",
+      "default_title": "__MSG_pageActionTitle__"
+   },
+   "background": {
+      "service_worker": "bg.js"
+   },
+   "commands": {
+      "hotkey-hot-translate-selected-text": {
+         "description": "__MSG_lblHotTranslatedSelectedText__"
+      },
+      "hotkey-show-original": {
+         "description": "__MSG_lblRestorePageToOriginal__"
+      },
+      "hotkey-swap-page-translation-service": {
+         "description": "__MSG_swapTranslationService__",
+         "suggested_key": {
+            "default": "Alt+Q"
+         }
+      },
+      "hotkey-toggle-translation": {
+         "description": "__MSG_lblSwitchTranslatedAndOriginal__",
+         "suggested_key": {
+            "default": "Alt+T"
+         }
+      },
+      "hotkey-translate-page-1": {
+         "description": "__MSG_lblTranslatePageToTargetLanguage__ 1"
+      },
+      "hotkey-translate-page-2": {
+         "description": "__MSG_lblTranslatePageToTargetLanguage__ 2"
+      },
+      "hotkey-translate-page-3": {
+         "description": "__MSG_lblTranslatePageToTargetLanguage__ 3"
+      },
+      "hotkey-translate-selected-text": {
+         "description": "__MSG_msgTranslateSelectedText__",
+         "suggested_key": {
+            "default": "Alt+S"
+         }
+      }
+   },
+   "content_scripts": [ {
+      "all_frames": false,
+      "js": [ "/contentScript/checkScriptIsInjected.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": true,
+      "js": [ "/lib/polyfill.js", "/lib/checkedLastError.js", "/lib/languages.js", "/lib/config.js", "/lib/platformInfo.js" ],
+      "match_about_blank": true,
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": true,
+      "js": [ "/lib/i18n.js", "/contentScript/showOriginal.js", "/contentScript/pageTranslator.js", "/contentScript/translateSelected.js", "/contentScript/showTranslated.js" ],
+      "match_about_blank": true,
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_end"
+   }, {
+      "all_frames": false,
+      "js": [ "/contentScript/popupMobile.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_end"
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_extensionDescription__",
+   "homepage_url": "https://github.com/FilipePS/Traduzir-paginas-web",
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "/icons/icon-128.png",
+      "32": "/icons/icon-32.png",
+      "64": "/icons/icon-64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAh3BbBTfal7EsBwRdFIQGYo0SNryFq5LpqJwm300ZMGLh9giM2YdtXK1ZjdnQsP/yS5Gl4yaTrXGOzObrULPPohckAfOk1VGc3DnvMHeShhaEYHWMU9FRTWa7ib/8uwaiDhNvW48s+Rc0JtBsyfycIju8+qULClk/jHmwcIgXN5/GvRCcQJv8LG/x5VQrsGYbJ4Cun/avlE4NoqRbwSmuOhZ0eIK2rv0GQbucKlo+gtz4cYcv1UbhQdTpoHe1id4d7hxRgeUj6mttH9f6A1fgjSnCc9cB1LcVzJWEId24whPIUHNhnbhMkeerl9uvTSa0Sq5bEQn5MIT/WTXNJS42cQIDAQAB",
+   "manifest_version": 3,
+   "minimum_chrome_version": "88.0",
+   "name": "TWP - Translate Web Pages",
+   "optional_permissions": [ "webNavigation" ],
+   "options_ui": {
+      "browser_style": false,
+      "open_in_tab": true,
+      "page": "/options/options.html"
+   },
+   "permissions": [ "activeTab", "storage", "contextMenus", "webRequest", "offscreen" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "10.2.5.0",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "/icons/icon-32.png", "/icons/google-translate-32.png", "/icons/bing-translate-32.png", "/icons/yandex-translate-32.png", "/icons/swap-32.png", "/contentScript/css/*", "/contentScript/html/*", "/_locales/*", "/options/open-options.html" ]
+   } ]
+}
