@@ -179,6 +179,7 @@ overview {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
+spawn-at-startup "dms" "run"
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
 spawn-at-startup "waydroid" "session" "start"
 spawn-at-startup "waydroid" "session" "start"
