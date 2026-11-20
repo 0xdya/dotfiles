@@ -1,0 +1,15 @@
+dms-shell
+bibata-cursor-theme-bin
+bicon-git
+claude-desktop-extra
+helium-browser-bin
+hplip-plugin
+mpvpaper
+python-magika
+python-markitdown
+ventoy-bin
+vesktop
+virtio-win
+vscodium-bin
+weasis-bin
+yay

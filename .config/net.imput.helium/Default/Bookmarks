@@ -1,0 +1,183 @@
+{
+   "checksum": "ed1c81a66381e61a8750953ef8dbb02f",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13406933207000000",
+            "date_last_used": "13439563147322275",
+            "guid": "0f53d76a-eec0-4303-8156-582366596474",
+            "id": "7",
+            "name": "",
+            "type": "url",
+            "url": "https://x.com/"
+         }, {
+            "date_added": "13439404636554093",
+            "date_last_used": "13439665805265561",
+            "guid": "a89834ca-e828-47ef-a035-b920f25b1d23",
+            "id": "45",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://github.com/"
+         }, {
+            "date_added": "13404772895000000",
+            "date_last_used": "13439561011839107",
+            "guid": "692f4fa8-9db9-408d-a384-201bbef2d9e5",
+            "id": "6",
+            "name": "",
+            "type": "url",
+            "url": "https://web.telegram.org/a/"
+         }, {
+            "date_added": "13435432813000000",
+            "date_last_used": "13439583452005029",
+            "guid": "cee36665-81ce-48a1-90b4-c9cf2cfaa5d4",
+            "id": "11",
+            "name": "",
+            "type": "url",
+            "url": "https://www.facebook.com/UTMB.F.S.E"
+         }, {
+            "date_added": "13439332502552941",
+            "date_last_used": "13439665587233909",
+            "guid": "5c797c3a-d618-400e-982f-8ba7e490f43e",
+            "id": "36",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://www.instagram.com/"
+         }, {
+            "date_added": "13427545828000000",
+            "date_last_used": "13439428010861884",
+            "guid": "ab23e44c-aba9-4ec2-9fc2-ded9d5db4081",
+            "id": "12",
+            "name": "",
+            "type": "url",
+            "url": "https://mail.proton.me/u/1/inbox"
+         }, {
+            "date_added": "13439333126699547",
+            "date_last_used": "13439593128808436",
+            "guid": "bafe7dc5-3622-4125-96f6-0da57ea2a839",
+            "id": "41",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://mail.google.com/mail/u/1/#inbox"
+         }, {
+            "date_added": "13439333221777749",
+            "date_last_used": "13439583438500346",
+            "guid": "1182908b-bc33-43c8-80ca-c790432234c0",
+            "id": "43",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://app.tuta.com/mail/OoFEfrA-1s-9"
+         }, {
+            "date_added": "13439332430815948",
+            "date_last_used": "13439586327600514",
+            "guid": "4c38f776-588f-4c20-a849-7dc6ce595de8",
+            "id": "34",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://www.youtube.com/"
+         }, {
+            "date_added": "13405380065000000",
+            "date_last_used": "13439581147972291",
+            "guid": "cf96c207-6034-43ff-9e0e-54eba4e54db9",
+            "id": "10",
+            "name": "",
+            "type": "url",
+            "url": "https://www.pinterest.com/"
+         }, {
+            "date_added": "13439333190510214",
+            "date_last_used": "0",
+            "guid": "1c741647-3304-4cfb-8894-48bacc0566f9",
+            "id": "42",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://www.msn.com/ar-eg/weather/forecast/in-%D8%A8%D8%B4%D8%A7%D8%B1,%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1?loc=eyJsIjoi2KjYtNin2LEiLCJyIjoi2KjYtNin2LEiLCJyMiI6Itiv2KfYptix2Kkg2KjYtNin2LEiLCJjIjoi2KfZhNis2LLYp9im2LEiLCJpIjoiRFoiLCJ0IjoxMDIsImciOiJhci1lZyIsIngiOiItMi4yMTg0IiwieSI6IjMxLjYxNjMifQ%3D%3D&weadegreetype=C"
+         }, {
+            "date_added": "13407530976000000",
+            "date_last_used": "13439583521245401",
+            "guid": "c7733aa6-4a2d-4624-9f82-f59089bbb2ab",
+            "id": "5",
+            "name": "",
+            "type": "url",
+            "url": "https://web.whatsapp.com/"
+         }, {
+            "date_added": "13439332739623236",
+            "date_last_used": "13439583495864633",
+            "guid": "0a800454-1bc6-4221-93ae-860f807a0134",
+            "id": "39",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Ac2",
+            "type": "url",
+            "url": "https://classroom.google.com/u/3/h/st"
+         }, {
+            "date_added": "13439332704271825",
+            "date_last_used": "13439583509353207",
+            "guid": "56b40481-8580-497a-ad62-8654da046b5c",
+            "id": "38",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Ac1",
+            "type": "url",
+            "url": "https://classroom.google.com/u/1/h/st"
+         }, {
+            "date_added": "13439421823141863",
+            "date_last_used": "0",
+            "guid": "7881b342-c5f9-4a1e-a0d8-7727d13eb679",
+            "id": "47",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://www.kimi.ai/"
+         } ],
+         "date_added": "13439325942071127",
+         "date_last_used": "0",
+         "date_modified": "13439421823141863",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13439325942071127",
+         "date_last_used": "0",
+         "date_modified": "13439331371767312",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13439325942071127",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

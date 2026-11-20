@@ -1,0 +1,14 @@
+# متصفح هيليوم: allowlist
+.config/net.imput.helium/*
+!.config/net.imput.helium/Default/
+.config/net.imput.helium/Default/*
+!.config/net.imput.helium/Default/Preferences
+!.config/net.imput.helium/Default/Bookmarks
+
+*.bak
+*.bac
+*.backup*
+.env
+.env.*
+
+.config/dms/plugins/

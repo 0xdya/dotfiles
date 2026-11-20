@@ -1,0 +1,31 @@
+{
+  "lockfileVersion": 1,
+  "plugins": {
+    "calculator": {
+      "repo": "https://github.com/rochacbruno/DankCalculator",
+      "commit": "1db5865419a40a33171a475855a59e0b8bf7187f"
+    },
+    "catWidget": {
+      "repo": "https://github.com/xi-ve/cat-dms",
+      "commit": "eb7b5138b672be3c06445dd80de6bc30c3076030"
+    },
+    "emojiPicker": {
+      "repo": "https://github.com/hthienloc/dms-plugins",
+      "path": "emojiPicker",
+      "commit": "3514028e7923e729de4a7e4c7475867355ad605e"
+    },
+    "mpvpaperWallpaper": {
+      "repo": "https://github.com/kanghengliu/dms-mpvpaper",
+      "commit": "36e0a3371937b6e76a45daa4758ba112ed77ee64"
+    },
+    "quickCapture": {
+      "repo": "https://github.com/hthienloc/dms-plugins",
+      "path": "quickCapture",
+      "commit": "3514028e7923e729de4a7e4c7475867355ad605e"
+    },
+    "wallpaperCarousel": {
+      "repo": "https://github.com/motor-dev/wallpaperCarousel",
+      "commit": "c08fbb92c39d4d778bb08e520cfd96e395594440"
+    }
+  }
+}
