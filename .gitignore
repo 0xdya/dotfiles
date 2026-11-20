@@ -3,7 +3,6 @@
 !.config/net.imput.helium/Default/
 .config/net.imput.helium/Default/*
 !.config/net.imput.helium/Default/Preferences
-
 !.config/net.imput.helium/Default/Bookmarks
 
 *.bak
@@ -11,3 +10,5 @@
 *.backup*
 .env
 .env.*
+
+.config/dms/plugins/
