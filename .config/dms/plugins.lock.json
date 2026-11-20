@@ -10,8 +10,9 @@
       "commit": "eb7b5138b672be3c06445dd80de6bc30c3076030"
     },
     "emojiPicker": {
-      "repo": "https://github.com/hthienloc/dms-emoji-picker",
-      "commit": "dca1751fa8086098edd552e1299ad3caeff3cc07"
+      "repo": "https://github.com/hthienloc/dms-plugins",
+      "path": "emojiPicker",
+      "commit": "3514028e7923e729de4a7e4c7475867355ad605e"
     },
     "mpvpaperWallpaper": {
       "repo": "https://github.com/kanghengliu/dms-mpvpaper",
@@ -20,7 +21,7 @@
     "quickCapture": {
       "repo": "https://github.com/hthienloc/dms-plugins",
       "path": "quickCapture",
-      "commit": "e12fe2f7da3d97e08ab2032f6c943e18480779b5"
+      "commit": "3514028e7923e729de4a7e4c7475867355ad605e"
     },
     "wallpaperCarousel": {
       "repo": "https://github.com/motor-dev/wallpaperCarousel",

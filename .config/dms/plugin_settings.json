@@ -64,6 +64,8 @@
     "enabled": true
   },
   "emojiPicker": {
-    "enabled": true
+    "enabled": true,
+    "defaultAction": "paste",
+    "defaultCategory": "recent"
   }
 }
