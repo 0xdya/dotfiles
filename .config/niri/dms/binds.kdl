@@ -57,8 +57,8 @@ binds {
     Mod+Shift+Page_Up { move-workspace-up; }
     Mod+Shift+U { move-workspace-down; }
     Mod+U { focus-workspace-down; }
-    Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
     Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
     Alt+Print { screenshot-window; }
     Alt+XF86Launch1 { screenshot-window; }
     Mod+Alt+WheelScrollDown { focus-column-right; }
@@ -130,7 +130,7 @@ binds {
     Mod+Shift+E { quit; }
     Mod+B { spawn "helium-browser"; }
     Mod+BackSpace { spawn "poweroff"; }
-    Mod+C { spawn "code"; }
+    Mod+C hotkey-overlay-title="VS Codium" { spawn "codium"; }
     Mod+T hotkey-overlay-title="Open Terminal" { spawn "alacritty"; }
     Mod+Y { spawn "chromium" "--app=https://youtube.com" "--ozone-platform-hint=auto"; }
     Mod+D repeat=false { toggle-overview; }
