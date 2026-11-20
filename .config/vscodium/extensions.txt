@@ -1,0 +1,8 @@
+cherrymarkdownpublisher.cherry-markdown
+continue.continue
+danielpinto8zz6.c-cpp-compile-run
+les-profs-d-info.algorithme-tn
+rod2ik.vscode-pseudocode-i18n
+saoudrizwan.claude-dev
+v1hz.kdl
+yandeu.five-server
